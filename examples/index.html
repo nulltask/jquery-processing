@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-1.8.0.js"></script>
+<script src="http://cloud.github.com/downloads/processing-js/processing-js/processing-1.4.1.js"></script>
+<script src="https://raw.github.com/mrdoob/stats.js/master/build/Stats.js"></script>
+<script src="../jquery-processing.js"></script>
+</head>
+<body>
+
+<h1>jQuery Processing - Example</h1>
+
+<div class="canvas-container">
+  <canvas data-processing-sources="basic-example.pde"></canvas>
+  <button class="toggle" data-pause="false">Pause</button>
+</div>
+
+<h2>Source code</h2>
+
+<pre></pre>
+
+<script>
+  /**
+   * DOM content loaded.
+   */
+  
+  jQuery(function($) {
+    var stats = new Stats()
+      , el = stats.domElement;
+  
+    /**
+     * Initialize processing canvas.
+     */
+    
+    $('canvas').processing({
+        onSetup: function() {
+          $('.canvas-container').append(el);
+        }
+      , onFrameStart: function() {
+          stats.begin();
+        }
+      , onFrameEnd: function() {
+          stats.end();
+        }
+      , onPause: function() {
+          
+          el.style.visibility = 'hidden';
+        }
+      , onLoop: function() {
+          el.style.visibility = 'visible';
+        }
+    });
+    
+    /**
+     * Toggle pause/resume state.
+     */
+    
+    $('.toggle').on('click', function(e) {
+      var $this = $(this);
+      
+      if ($this.data('pause')) {
+        $this.text('Pause').data('pause', false);
+        $('canvas').data('p5-instance').loop();
+      } else {
+        $this.text('Resume').data('pause', true);
+        $('canvas').data('p5-instance').noLoop();
+      }
+    });
+  });
+</script>
+
+<script>
+  var scripts = document.getElementsByTagName('script');
+  
+  for (var i = 0, len = scripts.length; i < len; ++i) {
+    if (!scripts[i].src) {
+      document.getElementsByTagName('pre')[0].innerHTML = scripts[i].innerText;
+      break;
+    }
+  }
+</script>
+
+</body>
+</html>
