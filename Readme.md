@@ -1,15 +1,17 @@
 
 # jquery-processing
 
-  [Processing.js](http://processingjs.org/) for [Node.js](http://nodejs.org)
+  A tiny Processing.js utility build on jQuery.
 
 ## Installation
 
 ```html
-<script src="http://code.jquery.com/jquery-1.8.0.js"></script>
-<script src="http://cloud.github.com/downloads/processing-js/processing-js/processing-1.4.1.js"></script>
-<script src="../jquery-processing.js"></script>
+<script src="jquery-1.8.0.js"></script>
+<script src="processing-1.4.1.js"></script>
+<script src="jquery-processing.js"></script>
 ```
+
+Notes: Put jquery-processing after Processing.js.
 
 ## Usage
 
