@@ -1,7 +1,6 @@
-
 # jquery-processing
 
-  A tiny Processing.js utility build on jQuery.
+  A tiny Processing.js utility built on jQuery.
 
 ## Installation
 
