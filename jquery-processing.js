@@ -119,7 +119,7 @@ Processing.disableInit();
    * Set plugin version.
    */
 
-  plugin.version = '0.0.1';
+  plugin.version = '0.1.0';
 
   /**
    * Register as jQuery plugin.
