@@ -34,6 +34,7 @@
     
     $('canvas').processing({
         onSetup: function() {
+          console.log(this);
           $('.canvas-container').append(el);
         }
       , onFrameStart: function() {

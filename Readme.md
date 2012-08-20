@@ -27,6 +27,10 @@ jQuery(function($) {
   $('canvas').processing({
       onSetup: function() {
         // callback after setup()
+        
+        // Get Processing instances
+        var p5 = $(this).data('p5-instance')
+          , sketch = $(this).data('p5-sketch');
       }
     , onFrameStart: function() {
         // callback before draw()

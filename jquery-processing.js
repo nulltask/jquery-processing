@@ -86,13 +86,13 @@ Processing.disableInit();
          * Set callbacks.
          */
 
-        sketch.onSetup = options.onSetup || noop;
-        sketch.onLoop = options.onLoop || noop;
-        sketch.onExit = options.onExit || noop;
-        sketch.onLoad = options.onLoad || noop;
-        sketch.onPause = options.onPause || noop;
-        sketch.onFrameStart = options.onFrameStart || noop;
-        sketch.onFrameEnd = options.onFrameEnd || noop;
+        sketch.onSetup = $.proxy(options.onSetup || noop, self);
+        sketch.onLoop = $.proxy(options.onLoop || noop, self);
+        sketch.onExit = $.proxy(options.onExit || noop, self);
+        sketch.onLoad = $.proxy(options.onLoad || noop, self);
+        sketch.onPause = $.proxy(options.onPause || noop, self);
+        sketch.onFrameStart = $.proxy(options.onFrameStart || noop, self);
+        sketch.onFrameEnd = $.proxy(options.onFrameEnd || noop, self);
 
         /**
          * Start rendering.
